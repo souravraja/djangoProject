@@ -51,7 +51,9 @@
     
                 <div class="box">
                     <div class="box-img">
+                        {% if i.product_image %}
                         <img src="{{i.product_image.url}}" alt="">
+                        {% endif %}
                     </div>
                     <div class="text">
                         <h3>{{i.product}}</h3>
@@ -71,6 +73,6 @@
         </div> 
 
     </div> 
-      <a href="{%url 'addmanuitems' %}" class="addmanu">+</a>
+      <a href="{%url 'addmanuitems' pk %}" class="addmanu">+</a>
 </body>
 </html>

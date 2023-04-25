@@ -212,10 +212,17 @@ class manu(View):
         
 
 class addmanyitems(View):
-    def get(self,request):
+    pk=None
+    def get(self,request,pk):
+        k=[Ownshop.objects.get(id=pk)]
+        print(k)
+        self.pk=pk
         form=AddProduct
         return render(request,'ownshop/additems.html',{'form':form})
-    def post(self,request):
+    def post(self,request,pk):
+        k1=[p for p in ShopCategory.objects.all() if p.id == pk]
+        k=[p for p in Ownshop.objects.all() if p.id == pk]
+        print(k1[0])
         form=AddProduct(request.POST,request.FILES)
         if form.is_valid():
             
@@ -223,28 +230,29 @@ class addmanyitems(View):
             price=form.cleaned_data['price']
             prodict_details=form.cleaned_data['product_details']
             product_img=form.cleaned_data['product_image']
-            
-            print(product)
-            print(price)
-            print(prodict_details)
-            print(product_img)
-            return redirect("addmanuitems")
+            reg=Product(shopname=k[0],product=product,price=price,product_details=prodict_details,product_image=product_img,)
+            reg.save()
+        return redirect("manu",pk=pk,data=k1[0])
 
 class addshop(View):
-    
-    def get(self,request):
-        print()
+    pk=None
+    def get(self,request,pk):
+        k=[ShopCategory.objects.get(id=pk)]
+        self.pk=pk
         form=AddShop
         return render(request,'ownshop/addshop.html',{'form':form})
-    def post(self,request):
+    def post(self,request,pk):
+        print(pk)
+        # k=[ShopCategory.objects.get(id=pk)]
+        # k1=[p for p in Ownshop.objects.all() if p.id == pk ]
+        k=[p for p in ShopCategory.objects.all() if p.id == pk]
         form=AddShop(request.POST,request.FILES)
         if form.is_valid():
+            shopcategory=k[0]
             shopname=form.cleaned_data['shop_name']
             shop_ownername=form.cleaned_data['shop_ownername']
             ph_no=form.cleaned_data['ph_no']
             address=form.cleaned_data['address']
-            print(shopname)
-            print(shop_ownername)
-            print(ph_no)
-            print(address)
-            return redirect("nameofshop")
+            reg=Ownshop(type1=shopcategory,shop_name=shopname,shop_ownername=shop_ownername,ph_no=ph_no,address=address)
+            reg.save()
+            return redirect('nameofshop',pk=pk)

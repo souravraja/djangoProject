@@ -9,6 +9,6 @@ urlpatterns=[
    # path("manu/",views.manu.as_view(),name="manu"),
    path("nameofshop/<int:pk>/",views.nameofshop.as_view(),name="nameofshop"),
    # path("AddProduct/",views.AddProduct.as_view(),name="AddProduct"),
-   path("addmanuitems/",views.addmanyitems.as_view(),name="addmanuitems"),
-   path("addshop/",views.addshop.as_view(),name="addshop"),
+   path("addmanuitems/<int:pk>/",views.addmanyitems.as_view(),name="addmanuitems"),
+   path("addshop/<int:pk>/",views.addshop.as_view(),name="addshop"),
 ]
