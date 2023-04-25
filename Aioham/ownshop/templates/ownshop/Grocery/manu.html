@@ -1,0 +1,10 @@
+{% extends 'ownshop/Grocery/home.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'ownshop\Medicine\css\manu.css' %}">
+{% endblock style %}
+{% block content %}
+<h2>Fruits</h2>
+<a href="{%url 'addmanuitems' %}" class="addmanu">+</a>
+{% endblock content %}
+

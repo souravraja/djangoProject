@@ -1,0 +1,16 @@
+{% extends "socialblog/base.html" %}
+
+{% block content %}
+    <h1>this is social blog</h1>
+    {% for i in context %}
+    <h1><a href="{% url 'PostDetails' i.id %}">{{i.title}}</a></h1>
+    
+    {{i.description}} <br>
+    {{i.dateTime}}
+    
+    <img src="{{i.user.profile.img.url}}" alt="sf" srcset="" height="180px" width="10%">
+    
+    {{i.video}}
+
+    {% endfor %}
+{% endblock content %}

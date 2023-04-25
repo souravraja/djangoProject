@@ -1,0 +1,28 @@
+{% extends 'education/base.html' %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{%static 'education/css/courses.css'%}">
+{% endblock style %}
+
+
+{% block content %}
+<section class="courses">
+    <h2>Our popular Courses</h2>
+    <div class="container courses_container">  
+        {% for i in course %}
+        <article class="course">
+            <div class="course_image">
+                <img src="{% static 'education/images/course6.jpg' %}" alt="">
+            </div>
+            <div class="course_info">
+                <h4>{{i.title}}</h4>
+                <p>{{i.description}}
+                </p>
+                <a href="" class="btn btn-primary">Learn More</a>
+            </div>
+            
+        </article>   
+        {% endfor %}
+    </div>
+</section> 
+{% endblock content %}

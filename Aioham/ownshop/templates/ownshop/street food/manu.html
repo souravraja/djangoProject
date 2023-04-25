@@ -1,0 +1,9 @@
+{% extends 'ownshop/street food/home.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'ownshop/street food/css/manu.css' %}">
+{% endblock style %}
+{% block content %}
+<h2>street</h2>
+<a href="{%url 'addmanuitems' %}" class="addmanu">+</a>
+{% endblock content %}

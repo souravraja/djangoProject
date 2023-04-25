@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responsive movie website </title>
+
+    <link rel="stylesheet" href="{% static 'movieBazers/css/movihome/style.css' %}">
+    <link rel="stylesheet" href="{% static 'movieBazers/css/movihome/slider.css' %}">
+
+    <!-- <link rel="shortcut icon" href="img/fav-icon.png" type="image/x-icon"> -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9.0.4/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+</head>
+<body>
+    <header>
+        <div class="nav container">
+            <!-- logo -->
+            <a href="" class="logo">movie<span>Val</span>
+            </a>
+            <!-- serch box  -->
+            <div class="search-box">
+                <input type="text" name="" id="search-input" placeholder="Search movie">
+                <i class="bx bx-search"></i>
+            </div>
+            <!------------- -->
+            <a href="#" class="user">
+                <img src="" alt="" class="user-img">
+            </a>
+            <div class="navbar">
+                <a href="" class="nav-link nav-active">
+                    <i class="bx bx-home"></i>
+                    <span class="nav-link-title">home</span>
+                </a>
+                <a href="" class="nav-link">
+                    <i class="bx bxs-hot"></i>
+                    <span class="nav-link-title">Trending</span>
+                </a>
+                <a href="" class="nav-link">
+                    <i class="bx bx-compass"></i>
+                    <span class="nav-link-title">Explore</span>
+                </a>
+                <a href="" class="nav-link">
+                    <i class="bx bx-tv"></i>
+                    <span class="nav-link-title">movies</span>
+                </a>
+                <a href="" class="nav-link">
+                    <i class="bx bx-heart"></i>
+                    <span class="nav-link-title">Favourite</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+<!-- this is header movie---------------------------------------------- -->
+{% for mainmovie in mm %}
+    <section class="home container" id="home">
+        <img src="{{mainmovie.img.url}}" alt="" class="home-img">
+        <div class="home-text">
+            <h1 class="home-title">{{mainmovie.title}}</h1>
+            <p>prlrasing 10 April</p>
+            <a href="" class="watch-btn">
+                <i class="bx bx-right-arrow"></i>
+                <span>watch the trailer</span>
+            </a>
+        </div>
+    </section>
+{% endfor %}
+
+
+
+<!--  popular section start -->
+
+  
+<!-- popular section start -->
+<section class="popular container" id="popular">
+    <div class="heading">
+        <h2 class="headiog-title">popular movies</h2>
+        <div class="swiper-btn">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            
+        </div>
+    </div>
+
+
+
+<!-- ------------------------------------------------------- -->
+{% for smm in sm %}
+<div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+    <div class="swiper-slide">
+        <div class="movie-box">
+            <img src="{{smm.img.url}}" alt="" class="movie-box-img">
+            <div class="box-text">
+                <h2 class="movie-title">aaaspider-man: no way home</h2>
+                <span class="movie-type">Action</span>
+                <a href="play-page.html" class="watch-btn play-btn">
+                    <i class="bx bx-right-arrow"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="swiper-slide">
+        <div class="movie-box">
+            <img src="{{smm.img.url}}" alt="" class="movie-box-img">
+            <div class="box-text">
+                <h2 class="movie-title">spider-man: no way home</h2>
+                <span class="movie-type">Action</span>
+                <a href="#" class="watch-btn play-btn">
+                    <i class="bx bx-right-arrow"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="swiper-slide">
+        <div class="movie-box">
+            <img src="{{smm.img.url}}" alt="" class="movie-box-img">
+            <div class="box-text">
+                <h2 class="movie-title">spider-man: no way home</h2>
+                <span class="movie-type">Action</span>
+                <a href="#" class="watch-btn play-btn">
+                    <i class="bx bx-right-arrow"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="swiper-slide">
+        <div class="movie-box">
+            <img src="{{smm.img.url}}" alt="" class="movie-box-img">
+            <div class="box-text">
+                <h2 class="movie-title">spider-man: no way home</h2>
+                <span class="movie-type">Action</span>
+                <a href="#" class="watch-btn play-btn">
+                    <i class="bx bx-right-arrow"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="swiper-slide">
+        <div class="movie-box">
+            <img src="img/ab.jpg" alt="" class="movie-box-img">
+            <div class="box-text">
+                <h2 class="movie-title">spider-man: no way home</h2>
+                <span class="movie-type">Action</span>
+                <a href="#" class="watch-btn play-btn">
+                    <i class="bx bx-right-arrow"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="swiper-slide">
+        <div class="movie-box">
+            <img src="img/ab.jpg" alt="" class="movie-box-img">
+            <div class="box-text">
+                <h2 class="movie-title">spider-man: no way home</h2>
+                <span class="movie-type">Action</span>
+                <a href="#" class="watch-btn play-btn">
+                    <i class="bx bx-right-arrow"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="swiper-slide">
+        <div class="movie-box">
+            <img src="img/ab.jpg" alt="" class="movie-box-img">
+            <div class="box-text">
+                <h2 class="movie-title">spider-man: no way home</h2>
+                <span class="movie-type">Action</span>
+                <a href="#" class="watch-btn play-btn">
+                    <i class="bx bx-right-arrow"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    </div>
+<div class="swiper-pagination"></div>
+</div>
+{% endfor %}
+
+
+
+</section>
+
+<!-- popular section end -->
+
+<!-- popular section end -->
+<!-- --------------------------------------movie section start -->
+
+
+<section class="movies container" id="movies">
+    <div class="heading">
+        <h2 class="heading-title">movie and show</h2>
+    </div>
+{% for mn in m %}
+    <div class="movies-content">
+        <div class="movie-box">
+            <img src="{{mn.img.url}}" alt="" class="movie-box-img">
+            <div class="box-text">
+                <h2 class="movie-title">{{mn.title}}</h2>
+                <span class="movie-type">action {{mn.title}}</span>
+                <a href="{% url 'showmovie' 1 %}" class="watch-btn play-btn">
+                    <i class="bx bx-right-arrow"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    {% endfor %}
+</section>
+<!-- movie section end -->
+
+
+
+
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script> -->
+
+<!-- Initialize Swiper -->
+<script>
+
+</script>
+<script src="{% static 'movieBazers/js/movihome/style.js' %}"></script>
+<script src="{% static 'movieBazers/js/movihome/slider.js' %}"></script>
+</body>
+</html>

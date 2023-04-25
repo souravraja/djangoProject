@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'education/css/base.css'%}">
+    
+    {% block style %}
+    
+    {% endblock style %}
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="container nav_container">
+            <h1><a href="{% url 'allin' %}" class="containtname">AiohamEducation</a></h1>
+            <ul class="nav_menu">
+                <li><a href="{% url 'educationHome' %}">Home</a></li>
+                <li><a href="{% url 'educationAbout' %}">About</a></li>
+                <li><a href="{% url 'educationCourses' %}">Course</a></li>
+                <li><a href="{% url 'educationContect' %}">Contact</a></li>
+                <a href="{% url 'profile' %}">
+                    <div class="profile-photo">
+                        {% if user.profile.img %}
+                        <img src="{{user.profile.img.url}}" alt="pic" srcset="">
+                        {% endif %}
+                    </div></a>
+            </ul>
+            <button id="oper-menu-btn"><i class="uil uil-bars"></i></button>
+            <button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
+        </div>
+    </nav>
+    
+{% block content %}
+
+{% endblock content %}
+{% block js %}
+<script src="{% static 'education/js/base.js' %}"></script>
+{% endblock js %}
+    
+</body>
+</html>

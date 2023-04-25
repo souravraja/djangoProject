@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'socialblog/css/home1.css' %}">
+    {% block css %}
+    {% endblock css %}
+    <!-- iconscout css -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="{% url 'allin' %}">
+            <h2 class="log">
+                AiohamSocial
+            </h2></a>
+            <form method="post" class="search-bar">
+                {% csrf_token %}
+                <i class="uil uil-search"></i>
+                <input type="search" name="" id="" placeholder="search for creators,inspiration,and projects">
+            </form>
+            <div class="create">
+                <label class="btn btn-primary" for="create-post">create</label>
+                <a href="{% url 'profile'  %}">
+                <div class="profile-photo">
+                    {% if user.profile.img %}
+                        <img src="{{user.profile.img.url}}" alt="pic" srcset="">
+                    {% endif %}
+                </div></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ----------------------MAIN--------------------------- -->
+    <main>
+        <div class="container">
+            {% block sidebar %}
+            <!-- ===============================     LIFT    ================================= -->
+            <div class="left">
+                <a href="{% url 'profile' %}" class="profile">
+                    <div class="profile-photo">
+                        {% if user.profile.img %}
+                            <img src="{{user.profile.img.url}}" alt="">
+                        {% endif %}
+                    </div>
+                    <div class="handle">
+                        <h4>{{user.username}}</h4>
+                        <p class="text-muted">@dayi</p>
+                    </div>
+                </a>
+                <!-- ======================      SLIDER    ============================= -->
+                
+                <div class="sidebar">
+                    <a class="menu-item active" href="{% url 'socialblog' %}" >
+                        <span><i class="uil uil-home"></i></span><h3>Home</h3>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span><i class="uil uil-compass"></i></span><h3>Explore</h3>
+                    </a>
+                    <a href="#" class="menu-item" id="notifications">
+                        <span><i class="uil uil-bell"><small class="notification-count">9+</small></i></span><h3>Notifications</h3>
+                        <!-- -----------------------    NOTIFICATION POPUP ------------------------ -->
+                        <div class="notification-popup">
+                            <div>
+                                <div class="profile-photo">
+                                    <img src="{% static 'social/images/profile-1.jpg' %}" alt="" srcset="">
+                                </div>
+                                <div class="notification-body">
+                                    <b>keke Benjamin</b> accepted your friend request
+                                    <small class="text-muted">2 DAYS AGO</small>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="profile-photo">
+                                    <img src="{% static 'social/images/profile-2.jpg' %}" alt="" srcset="">
+                                </div>
+                                <div class="notification-body">
+                                    <b>keke Benjamin</b> accepted your friend request
+                                    <small class="text-muted">2 DAYS AGO</small>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="menu-item" id="messages-notifications">
+                        <span><i class="uil uil-envelope" ><small class="notification-count">9+</small></i></span><h3>Messagse</h3>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span><i class="uil uil-bookmark"></i></span><h3>Bookmarks</h3>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span><i class="uil uil-chart-line"></i></span><h3>Analytics</h3>
+
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span><i class="uil uil-palette"></i></span><h3>Theme</h3>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span><i class="uil uil-setting"></i></span><h3>Settings</h3>
+                    </a>                                             
+                </div>
+                
+
+                <!-- ==========================  END OF SIDEBAR ============================= -->
+                
+                    <label for="create-post" class="btn btn-primary"><a href="{% url 'CreatePost' %}">Create Post</a></label>
+                
+                
+            </div>
+                {% endblock sidebar %}
+            <!-- =================== END OF LEFT   ====================== -->
+            <!-- ===============================     MIDDLE    ================================= -->
+            {% block content %}
+
+            <div class="middle">
+                <!-- ====================   STORIES   ================================= -->
+                <div class="stories">
+                    {% for j in story %}
+                    <a href="{% url 'ShortVideo' %}">
+                    <div class="story">
+
+                        <div class="profile-photo">
+                            <img src="{{j.img.url}}" alt="" srcset="">
+                        </div>
+                        <p class="name"> your story</p>
+                    </div>
+                </a>
+                {% endfor %}
+                     
+                </div>
+<!-- =================================    END OF STORIES  ==================== -->
+                <form action="" method="post" class="create-post">
+                    {% csrf_token %}
+                    <div class="profile-photo">
+                        <img src="{% static 'social/images/profile-2.jpg' %}" alt="" srcset="">
+                    </div>
+                    <input type="text" name="" placeholder="What's on your mind,Diana?" id="create-post">
+                    <input type="submit" value="Post Story" class="btn btn-primary">
+                </form>
+
+
+                <!-- ==========================   FEEDS   =============================== -->
+                <div class="feeds">
+                    {% for i in context %}
+                    <div class="feed">
+                        <div class="head">
+                            <div class="user">
+                                <a href="{% url 'profile1' i.user.id %}">
+                                    <div class="profile-photo">
+                                        <img src="{{i.user.profile.img.url}}" alt="" srcset="">
+                                    </div>
+                                
+                                    <div class="ingo">
+                                        <h3>{{i.user}}</h3>
+                                        <small>Dubai,15 minutes AGO</small>
+                                    </div>
+                                </a>
+                                
+                            </div>
+                            <span class="edit">
+                                    <i class="uil uil-ellipsis-h"></i>
+                            </span>
+                        </div>
+                        <a href="{% url 'PostDetails' i.id %}">
+                            <h2>{{i.title}}</h2>
+                        <div class="photo">      
+                                                
+                            <img src="{{i.image.url}}" alt="this is img" height="555px">
+                            
+                        </div>
+                    </a>
+                        <div class="action-button">
+                            <div class="interaction-buttons">
+                                <span><i class="uil uil-heart"></i></span>
+                                <span><i class="uil uil-comment-dots"></i></span>
+                                <span><i class="uil uil-share-alt"></i></span>
+                            </div>
+                            <div class="bookmark">
+                                <span><i class="uil uil-bookmark-full"></i></span>
+                            </div>
+                        </div>
+                        <div class="liked-by">
+                            <span><img src="{% static 'social/images/profile-10.jpg' %}" alt=""></span>
+                            <span><img src="{% static 'social/images/profile-4.jpg' %}" alt=""></span>
+                            <span><img src="{% static 'social/images/profile-15.jpg' %}" alt=""></span>
+                            <p>like by <b>Ernest Achiever</b> and <b>2,323 others</b> </p>
+                        </div>
+                        <div class="caption">
+                            <p><b>sourav kapri</b> {{i.description}} <span class="harsh-tag">#lifestyle</span> </p>
+                        </div>
+                        <div class="comments text-muted">view all 277 comments</div>
+                    </div>
+                {% endfor %}
+
+<!-- ============================================= FEED 2============================================= -->
+
+<!-- ===========================================   END FEED 2   ======================================== -->
+
+                </div>
+            </div>
+            {% endblock content %}
+<!-- =============================  END OF MIDDLE  =============================== -->
+
+
+            <!-- ===============================     RIGHT    ================================= -->
+            {% block Right %}
+
+            <div class="right">
+                <div class="right">
+                    <div class="messages">
+                        <div class="heading">
+                            <h4>Messages</h4><i class="uil uil-edit"></i>
+                        </div>
+                        <!-- ----------------SEARCH BAR ----------------------- -->
+                        <form method="post" class="search-bar">
+                            {% csrf_token %}
+                            <i class="uil uil-search"></i>
+                            <input type="search" placeholder="Search messages" name="" id="message-search">
+                        </form>
+                        <!-- ---------------  MESSAGES CATEGORY  --------------------- -->
+                        <div class="category">
+                            <h6 class="active">Primary</h6>
+                            <h6 class="">General</h6>
+                            <h6 class="messages-requests">Request(7)</h6>
+                        </div>
+                        <div class="message">
+                            <div class="profile-photo">
+                                <img src="{% static 'social/images/profile-5.jpg' %}" alt="">
+                            </div>
+                            <div class="message-body">
+                                <h5>Edem Quist</h5>
+                                <p class="text-muted">Just woke up bruh</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- =====================  END OF MESSAGES ====================== -->
+
+                    <!-- =============  FRIEND REQUESTS  ======================== -->
+                    <div class="friend-requests">
+                        <h4>REQUESTS</h4>
+                        <div class="request">
+                            <div class="info">
+                                <div class="profile-photo">
+                                    <img src="{% static 'social/images/profile-1.jpg' %}" alt="">
+                                </div>
+                                <div>
+                                    <h5>Hajia Bintu</h5>
+                                    <p class="text-muted">
+                                        8 mutual friend
+                                    </p>
+                                </div>
+                                
+                            </div>
+                            <div class="action">
+                                <button class="btn btn-primary">Accept</button>
+                                <button class="btn ">Decline</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+            {% endblock Right %}
+
+        </div>
+    </main>
+</body>
+</html>

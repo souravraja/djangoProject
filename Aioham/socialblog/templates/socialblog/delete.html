@@ -1,0 +1,10 @@
+{% extends "socialblog/base.html" %}
+
+{% block content %}
+<h1>delete</h1>
+<form method="post">
+    {% csrf_token %}
+    <button>delete</button>
+    <a href="{% url 'PostDetails' object.id %}">cancle</a>
+</form>
+{% endblock content %}

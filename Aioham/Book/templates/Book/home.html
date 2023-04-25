@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'book/css/home.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    {% block css%}
+
+    {%endblock css%}
+    {%block css2%}{%endblock css2%}
+    {%block css5%}{%endblock css5%}
+    <title>Document</title>
+</head>
+<body>
+    <!-- header -->
+    <section>
+        {% block content1 %}
+        <nav>
+            <div class="logo">
+                <img src="{% static 'book/images/logo.png'%}" alt="">
+            </div>
+                <ul>
+                    <li><a href="{% url 'homein'%}">Home</a></li>
+                    <li><a href="{% url 'bookin1'%}">books</a></li>
+                    <li><a href="{% url 'categoryin'%}">Category</a></li>
+                    <li><a href="{% url 'arrivalsin'%}">Arrivals</a></li>
+                    <li><a href="{% url 'reviewsin'%}">Reviews</a></li>
+                    <li><a href="{% url 'blogin'%}">Blog</a></li>
+                </ul>
+                <div class="social-icon">
+                    
+                    <a href=""><i class="fa-solid fa-heart"></i></a>
+                </div>
+               
+        </nav>
+        {% endblock content1%}
+        {% block content12 %}
+        <div class="main">
+            <div class="main_tag">
+                <h1>WELCOME TO<br><span>BOOK STORE</span></h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, nesciunt aut ab eveniet enim possimus doloribus minus, dicta eos excepturi quos deserunt? Adipisci placeat, dignissimos sit provident voluptas, itaque aliquam ducimus cupiditate accusantium, rem maxime.</p>
+                <a href="#" class="main_btn">Learn More</a>
+            </div>
+            <div class="main_img">
+                <img src="{% static 'book/images/table.png'%}" alt="">
+            </div>
+        </div>
+    </section>
+    <!-- header -->
+    <!-- services -->
+     <div class="services">
+        <h1>services</h1>
+        <div class="services_box">
+            <div class="services_card">
+            <i class="fa-solid fa-truck-fast"></i>
+            <h3>Fast Delivery</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis placeat possimus provident? Cum voluptatum reprehenderit corrupti quaerat quas! Totam optio fugiat officia, explicabo veritatis est, atque dolor sint animi sequi sapiente porro labore odio tempore.</p>
+            </div>
+
+            <div class="services_card">
+                <i class="fa-solid fa-headset"></i>
+                <h3>24 * 7 Services</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis placeat possimus provident? Cum voluptatum reprehenderit corrupti quaerat quas! Totam optio fugiat officia, explicabo veritatis est, atque dolor sint animi sequi sapiente porro labore odio tempore.</p>
+                </div>
+
+                <div class="services_card">
+                    <i class="fa-solid fa-tag"></i>
+                    <h3>Best Deal  </h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis placeat possimus provident? Cum voluptatum reprehenderit corrupti quaerat quas! Totam optio fugiat officia, explicabo veritatis est, atque dolor sint animi sequi sapiente porro labore odio tempore.</p>
+                    </div>
+
+                    <div class="services_card">
+                        <i class="fa-solid fa-lock"></i>
+                        <h3>Secure Payment</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis placeat possimus provident? Cum voluptatum reprehenderit corrupti quaerat quas! Totam optio fugiat officia, explicabo veritatis est, atque dolor sint animi sequi sapiente porro labore odio tempore.</p>
+                  </div>
+        </div>
+     </div>
+
+
+
+    <!-- services -->
+    <!-- about -->
+    
+    {% block about %}
+
+    <div class="about">
+        <div class="about_image">
+            <img src="{% static 'book/images/about.png'%}" alt="">
+        </div>
+        <div class="about_tag">
+            <h1>About Us</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi culpa alias perspiciatis dolore commodi sunt eum. Possimus esse illum obcaecati voluptas repudiandae voluptatem cumque quasi sit neque suscipit, nobis, odit, eos non quod molestias quo!</p>
+            <a href="#" class="about_btn">Learn More</a>
+        </div>
+    </div>
+    {% endblock about %}
+
+
+    <!-- about -->
+    <!-- books -->
+     <div class="featured_books">
+        <h1>Featured Books</h1>
+        <div class="featured_book_box">
+            <div class="featured_book_card">
+            <div class="featured_book_img">
+                <img src="{% static 'book/images/book_1.jpg'%}" alt="">
+            </div>
+            <div class="featured_book_tag">
+                <h2>Featured books</h2>
+                <p class="writer">jhon Deo</p>
+                <div class="categories">Thriller,Horror,Romance</div>
+                <p class="book_price">$25.50<sub><del>$28.60</del></sub></p>
+                <a href="#" class="f_btn">Learn More</a>
+            </div>
+        </div>
+
+        <div class="featured_book_card">
+            <div class="featured_book_img">
+                <img src="{% static 'book/images/book_10.png'%}" alt="">
+            </div>
+            <div class="featured_book_tag">
+                <h2>Featured books</h2>
+                <p class="writer">jhon Deo</p>
+                <div class="categories">Thriller,Horror,Romance</div>
+                <p class="book_price">$25.50<sub><del>$28.60</del></sub></p>
+                <a href="#" class="f_btn">Learn More</a>
+            </div>
+        </div>
+
+        <div class="featured_book_card">
+            <div class="featured_book_img">
+                <img src="{% static 'book/images/book_11.jpg'%}" alt="">
+            </div>
+            <div class="featured_book_tag">
+                <h2>Featured books</h2>
+                <p class="writer">jhon Deo</p>
+                <div class="categories">Thriller,Horror,Romance</div>
+                <p class="book_price">$25.50<sub><del>$28.60</del></sub></p>
+                <a href="#" class="f_btn">Learn More</a>
+            </div>
+        </div>
+
+
+        <div class="featured_book_card">
+            <div class="featured_book_img">
+                <img src="{% static 'book/images/book_12.png'%}" alt="">
+            </div>
+            <div class="featured_book_tag">
+                <h2>Featured books</h2>
+                <p class="writer">jhon Deo</p>
+                <div class="categories">Thriller,Horror,Romance</div>
+                <p class="book_price">$25.50<sub><del>$28.60</del></sub></p>
+                <a href="#" class="f_btn">Learn More</a>
+            </div>
+        </div>
+
+        <div class="featured_book_card">
+            <div class="featured_book_img">
+                <img src="{% static 'book/images/book_13.png'%}" alt="">
+            </div>
+            <div class="featured_book_tag">
+                <h2>Featured books</h2>
+                <p class="writer">jhon Deo</p>
+                <div class="categories">Thriller,Horror,Romance</div>
+                <p class="book_price">$25.50<sub><del>$28.60</del></sub></p>
+                <a href="#" class="f_btn">Learn More</a>
+            </div>
+        </div>
+
+        <div class="featured_book_card">
+            <div class="featured_book_img">
+                <img src="{% static 'book/images/book_14.png'%}" alt="">
+            </div>
+            <div class="featured_book_tag">
+                <h2>Featured books</h2>
+                <p class="writer">jhon Deo</p>
+                <div class="categories">Thriller,Horror,Romance</div>
+                <p class="book_price">$25.50<sub><del>$28.60</del></sub></p>
+                <a href="#" class="f_btn">Learn More</a>
+            </div>
+        </div>
+
+        <div class="featured_book_card">
+            <div class="featured_book_img">
+                <img src="{% static 'book/images/book_15.png'%}" alt="">
+            </div>
+            <div class="featured_book_tag">
+                <h2>Featured books</h2>
+                <p class="writer">jhon Deo</p>
+                <div class="categories">Thriller,Horror,Romance</div>
+                <p class="book_price">$25.50<sub><del>$28.60</del></sub></p>
+                <a href="#" class="f_btn">Learn More</a>
+            </div>
+        </div>
+
+
+        
+        
+    </div>
+     </div>
+    <!-- books -->
+
+    <!-- arrivals -->
+  <div class="arrivals">
+    <h1>new arrivals</h1>
+    <div class="arrivals_box">
+        <div class="arrivals_card">
+            <div class="arrivals_image">
+                <img src="{% static 'book/images/arrival_1.jpg'%}" alt="">
+            </div>
+            <div class="arrivals_tag">
+                <p>new arrivals</p>
+                <div class="arrivals_icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <a href="#" class="arrivals_btn">Learn More</a>
+            </div>
+        </div>
+
+        <div class="arrivals_card">
+            <div class="arrivals_image">
+                <img src="{% static 'book/images/arrival_2.jpg'%}" alt="">
+            </div>
+            <div class="arrivals_tag">
+                <p>new arrivals</p>
+                <div class="arrivals_icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <a href="#" class="arrivals_btn">Learn More</a>
+            </div>
+        </div>
+
+
+        <div class="arrivals_card">
+            <div class="arrivals_image">
+                <img src="{% static 'book/images/arrival_3.jpg'%}" alt="">
+            </div>
+            <div class="arrivals_tag">
+                <p>new arrivals</p>
+                <div class="arrivals_icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <a href="#" class="arrivals_btn">Learn More</a>
+            </div>
+        </div>
+
+        <div class="arrivals_card">
+            <div class="arrivals_image">
+                <img src="{% static 'book/images/arrival_4.jpg'%}" alt="">
+            </div>
+            <div class="arrivals_tag">
+                <p>new arrivals</p>
+                <div class="arrivals_icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <a href="#" class="arrivals_btn">Learn More</a>
+            </div>
+        </div>
+
+        <div class="arrivals_card">
+            <div class="arrivals_image">
+                <img src="{% static 'book/images/arrival_5.jpg'%}" alt="">
+            </div>
+            <div class="arrivals_tag">
+                <p>new arrivals</p>
+                <div class="arrivals_icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <a href="#" class="arrivals_btn">Learn More</a>
+            </div>
+        </div>
+
+        <div class="arrivals_card">
+            <div class="arrivals_image">
+                <img src="{% static 'book/images/arrival_6.jpg'%}" alt="">
+            </div>
+            <div class="arrivals_tag">
+                <p>new arrivals</p>
+                <div class="arrivals_icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <a href="#" class="arrivals_btn">Learn More</a>
+            </div>
+        </div>
+
+        <div class="arrivals_card">
+            <div class="arrivals_image">
+                <img src="{% static 'book/images/arrival_7.jpg'%}" alt="">
+            </div>
+            <div class="arrivals_tag">
+                <p>new arrivals</p>
+                <div class="arrivals_icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <a href="#" class="arrivals_btn">Learn More</a>
+            </div>
+        </div>
+
+        <div class="arrivals_card">
+            <div class="arrivals_image">
+                <img src="{% static 'book/images/arrival_8.webp'%}" alt="">
+            </div>
+            <div class="arrivals_tag">
+                <p>new arrivals</p>
+                <div class="arrivals_icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <a href="#" class="arrivals_btn">Learn More</a>
+            </div>
+        </div>
+
+        <div class="arrivals_card">
+            <div class="arrivals_image">
+                <img src="{% static 'book/images/arrival_9.jpg'%}" alt="">
+            </div>
+            <div class="arrivals_tag">
+                <p>new arrivals</p>
+                <div class="arrivals_icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <a href="#" class="arrivals_btn">Learn More</a>
+            </div>
+        </div>
+
+        <div class="arrivals_card">
+            <div class="arrivals_image">
+                <img src="{% static 'book/images/arrival_10.jpg'%}" alt="">
+            </div>
+            <div class="arrivals_tag">
+                <p>new arrivals</p>
+                <div class="arrivals_icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <a href="#" class="arrivals_btn">Learn More</a>
+            </div>
+        </div>
+
+    </div>
+  </div>
+
+
+
+    <!-- arrivals -->
+
+    <!-- reviews -->
+    <div class="reviews">
+        <h1>Review</h1>
+        <div class="review_box">
+            <div class="review_card">
+                <i class="fa-solid fa-quote-right"></i>
+                <div class="card_top">
+                    <img src="{% static 'book/images/review_1.png'%}" alt="">
+                </div>
+                <div class="card">
+                    <h2>jhon deo</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim minus blanditiis facilis quis voluptatibus rerum expedita, eligendi in veniam ad repudiandae, ex voluptas consequuntur nemo dolore. Possimus repellendus molestias nisi.</p>
+                    <div class="review_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="review_card">
+                <i class="fa-solid fa-quote-right"></i>
+                <div class="card_top">
+                    <img src="{% static 'book/images/review_2.png'%}" alt="">
+                </div>
+                <div class="card">
+                    <h2>jhon deo</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim minus blanditiis facilis quis voluptatibus rerum expedita, eligendi in veniam ad repudiandae, ex voluptas consequuntur nemo dolore. Possimus repellendus molestias nisi.</p>
+                    <div class="review_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="review_card">
+                <i class="fa-solid fa-quote-right"></i>
+                <div class="card_top">
+                    <img src="{% static 'book/images/review_3.png'%}" alt="">
+                </div>
+                <div class="card">
+                    <h2>jhon deo</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim minus blanditiis facilis quis voluptatibus rerum expedita, eligendi in veniam ad repudiandae, ex voluptas consequuntur nemo dolore. Possimus repellendus molestias nisi.</p>
+                    <div class="review_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="review_card">
+                <i class="fa-solid fa-quote-right"></i>
+                <div class="card_top">
+                    <img src="{% static 'book/images/review_4.png'%}" alt="">
+                </div>
+                <div class="card">
+                    <h2>jhon deo</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim minus blanditiis facilis quis voluptatibus rerum expedita, eligendi in veniam ad repudiandae, ex voluptas consequuntur nemo dolore. Possimus repellendus molestias nisi.</p>
+                    <div class="review_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- reviews -->
+    <!-- banner-->
+  <div class="banner">
+    <a href="#"class="banner_btn">Learn More</a>
+
+  </div>
+
+    <!-- banner -->
+
+<!-- blog -->
+<div class="blogs">
+    <h1>Our Blog</h1>
+    <div class="blog_box">
+       <div class="blog_card">
+        <div class="blog_img">
+            <img src="{% static 'book/images/blog_1.jpg'%}" alt="">
+        </div>
+        <div class="blog_tag">
+            <h2>Blogger</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore ipsa obcaecati animi, in nisi exercitationem eveniet voluptates quas ipsam ad voluptatum provident corporis nesciunt, quo veritatis saepe autem. Delectus, doloribus!</p>
+            <div class="blog_icon">
+            <i class="fa-solid fa-calender-days"></i>
+            <i class="fa-solid fa-heart"></i>
+        </div>
+        </div>
+       </div>
+
+
+       <div class="blog_card">
+        <div class="blog_img">
+            <img src="{% static 'book/images/blog_2.jpg'%}" alt="">
+        </div>
+        <div class="blog_tag">
+            <h2>Blogger</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore ipsa obcaecati animi, in nisi exercitationem eveniet voluptates quas ipsam ad voluptatum provident corporis nesciunt, quo veritatis saepe autem. Delectus, doloribus!</p>
+            <div class="blog_icon">
+            <i class="fa-solid fa-calender-days"></i>
+            <i class="fa-solid fa-heart"></i>
+        </div>
+        </div>
+       </div>
+
+
+       <div class="blog_card">
+        <div class="blog_img">
+            <img src="{% static 'book/images/blog_3.jpg'%}" alt="">
+        </div>
+        <div class="blog_tag">
+            <h2>Blogger</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore ipsa obcaecati animi, in nisi exercitationem eveniet voluptates quas ipsam ad voluptatum provident corporis nesciunt, quo veritatis saepe autem. Delectus, doloribus!</p>
+            <div class="blog_icon">
+            <i class="fa-solid fa-calender-days"></i>
+            <i class="fa-solid fa-heart"></i>
+        </div>
+        </div>
+       </div>
+
+       
+    </div>
+</div>
+
+
+
+
+
+<!-- blog -->
+
+<!-- footer -->
+<footer>
+    <div class="footer_main">
+        <div class="tag">
+            <img src="{% static 'book/images/logo.png'%}" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae nam temporibus tempora, illum, ducimus incidunt accusantium beatae optio voluptate laborum, numquam corporis vel cumque fuga labore! Placeat nihil enim harum.</p>
+        </div>
+
+        <div class="tag">
+            <h1>Quick link</h1>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Featured</a>
+            <a href="#">Arrivals</a>
+            <a href="#">reviews</a>
+            <a href="#">blog</a>
+        </div>
+
+        <div class="tag">
+            <h1>contact info</h1>
+            <a href="#"><i class="fa-solid fa-phone"></i>+ 94 12 345 6789</a>
+            <a href="#"><i class="fa-solid fa-phone"></i>+ 94 32 444 699</a>
+            <a href="#"><i class="fa-solid fa-envelope"></i>bookstore@gmail.com</a>
+
+
+        </div>
+        <div class="tag">
+            <h1>follow us</h1>
+            <div class="social_link">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-linkedin-in"></i>
+        </div>
+    </div>
+
+        <div class="tag">
+            <h1>Newsletter</h1>
+    <div class="search_bar">
+        <input type="text" placeholder="your email id here">
+        <button type="submit">Subscribe</button>
+    </div>
+
+        </div>
+   
+    <p class="end">design by<span><i class="fa-solid fa-face-grin"></i>Wt master code</span></p>
+</footer>
+
+
+<!-- footer -->
+{% endblock content12 %}
+
+
+</body>
+</html>

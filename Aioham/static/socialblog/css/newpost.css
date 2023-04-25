@@ -1,0 +1,49 @@
+.yourclass{
+    width: 100%;
+    height: 2.5rem;
+    align-items: center;
+
+    
+}
+.middle{
+    /* background-color: rgb(188, 210, 210); */
+    margin: 5px;
+    position: relative;
+}
+.middle h3{
+   
+    font-size: larger;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+.yourclass{
+    height: 5rem;
+    padding: 2rem;
+    margin-bottom: 15px;
+    border: solid 2px blueviolet;
+
+}
+.yourclass::placeholder{
+    font-size: 1.6rem;
+    color: rgb(98, 42, 227);
+}
+.yourdescription::placeholder{
+    font-size: 1.6rem;
+    color: rgb(102, 20, 210);
+    
+}
+.yourdescription{
+    width: 100%;
+    height: 18rem;
+    padding: 2rem;
+    border: solid 2px blueviolet;
+}
+
+
+.middle .postsubmit{
+    position: absolute;
+    height: 5rem;
+    bottom: 0rem;
+    width: 100%;
+    border-radius: 0;
+}

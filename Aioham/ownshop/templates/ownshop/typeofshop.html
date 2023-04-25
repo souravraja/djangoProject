@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'ownshop/css/typeofshop.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <a href="{% url 'allin' %}" class="web"><h1 >Aioham shop</h1></a>
+    <h1 class="type">type of shop</h1>
+    <div class="home">
+        {% for i in data %}
+        <a href="{% url 'nameofshop' i.id %}">
+            <div class="box">
+                {{i.name}}
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+    
+</body>
+</html>

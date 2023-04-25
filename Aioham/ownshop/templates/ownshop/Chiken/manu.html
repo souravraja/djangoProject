@@ -1,0 +1,19 @@
+{% extends 'ownshop/Chiken/home.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'ownshop/Chiken/css/manu.css' %}">
+{% endblock style %}
+{% block content %}
+
+<section class="items">
+    {% for i in k %}
+    <div class="item">
+        <img src="{{i.product_image.url}}" alt="">
+        <h1>{{i.product}}</h1>
+        <h1>{{i.price}}</h1>
+        <button> order</button>
+    </div>
+    {% endfor %}
+</section>
+<a href="{%url 'addmanuitems' %}" class="addmanu">+</a>
+{% endblock content %}

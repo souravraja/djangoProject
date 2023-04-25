@@ -1,0 +1,37 @@
+.main{
+    padding-top: 3%;
+}
+.main3{
+    width: 450px;
+    border: 03px solid blueviolet;
+    padding: 08px;
+    border-radius: 30px;
+    margin-left:8%;
+    margin-bottom: 10%;
+    position:relative;
+    
+    
+}
+input{
+    
+    border: 0px;
+    outline: 0px;
+    width: 300px;
+   font-size: 18px;
+   
+   
+}
+.main3 i{
+    margin-left: 20%;
+}
+::placeholder{
+    color:black;
+}
+
+.arrivals .arrivals_box{
+    width: 95%;
+    margin: 5px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap:25px 0;
+}

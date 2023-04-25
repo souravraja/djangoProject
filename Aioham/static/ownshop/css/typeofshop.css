@@ -1,0 +1,45 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}.web{
+    text-decoration: none;
+    font-size: 34px;
+}
+
+.type{
+    text-align: center;
+    font-size: 55px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-transform: capitalize;
+    border-bottom: 5px solid yellowgreen;
+    width: 100%;
+    margin-top: 0;
+    background-color: burlywood;
+    color: rgb(174, 12, 161);
+}
+
+.home{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding: 0.5rem;
+    
+}
+
+.home a{
+    border: 1px black solid;
+    padding: 2rem;
+    margin:  0.5rem;
+    text-decoration: none;
+    background-color: bisque;
+    
+}
+.box{
+    text-align: center;
+    font-size: 66px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.home a:hover{
+    background-color: yellowgreen;
+    color: blueviolet;
+}

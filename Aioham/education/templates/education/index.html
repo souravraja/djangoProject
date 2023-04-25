@@ -1,0 +1,237 @@
+{% extends 'education/base.html' %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{%static 'education/css/style.css'%}">
+{% endblock style %}
+{% block content %}
+    <header>
+        <div class="container header_container">
+            <div class="header_left">
+                <h1>Grow your skills to adnance your career path</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis odit consequatur iure at atque magni voluptatibus officia optio aspernatur dicta saepe, ea quas qui, minus odio repellendus inventore est? Reprehenderit.</p>
+                <a href="" class="btn btn-p">Get Started</a>
+            </div>
+            <div class="header_right">
+                <div class="header_right-img">
+                    <img src="{% static 'education/images/header.svg' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="categories">
+        <div class="container categories_container">
+            <div class="categories_left">
+                <h1>Categories</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate pariatur ea reiciendis illo! Nulla odit mollitia omnis maiores nam distinctio molestiae doloremque quisquam sed cupiditate? Numquam dicta provident eveniet est!</p>
+                <a href="" class="btn">Learn More</a>
+            </div>
+            <div class="categories_right">
+                {% for i in catagory %}
+                <a href="{% url 'educationCoursesfilter' i.title %}">
+                    <article class="category">
+                        <span class="category_icon"><i class="uil uil-bitcoin-circle"></i></span>
+                        <h5>{{i.title}}</h5>
+                        <p>{{i.description}}</p>
+                    </article>  
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+
+    </section>
+  <!-- =====================================   COURSE  ============================================= -->
+    <section class="courses">
+        <h2>Our popular Courses</h2>
+        <div class="container courses_container">
+            <article class="course">
+                <div class="course_image">
+                    <img src="{% static 'education/images/course1.jpg' %}" alt="">
+                </div>
+                <div class="course_info">
+                    <h4>Responsive Social Midia Website UI Design</h4>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque eaque eius asperiores suscipit laborum ratione, consequatur repudiandae vel aperiam odio nostrum est nesciunt nulla quod. Expedita beatae provident excepturi minima.
+                    </p>
+                    <a href="" class="btn btn-primary">Learn More</a>
+                </div>
+                
+            </article>
+
+            
+            <article class="course">
+                <div class="course_image">
+                    <img src="{% static 'education/images/course2.jpg' %}" alt="">
+                </div>
+                <div class="course_info">
+                    <h4>Responsive Social Midia Website UI Design</h4>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque eaque eius asperiores suscipit laborum ratione, consequatur repudiandae vel aperiam odio nostrum est nesciunt nulla quod. Expedita beatae provident excepturi minima.
+                    </p>
+                    <a href="" class="btn btn-primary">Learn More</a>
+                </div>
+                
+            </article>
+
+            
+            <article class="course">
+                <div class="course_image">
+                    <img src="{% static 'education/images/course3.jpg' %}" alt="">
+                </div>
+                <div class="course_info">
+                    <h4>Responsive Social Midia Website UI Design</h4>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque eaque eius asperiores suscipit laborum ratione, consequatur repudiandae vel aperiam odio nostrum est nesciunt nulla quod. Expedita beatae provident excepturi minima.
+                    </p>
+                    <a href="" class="btn btn-primary">Learn More</a>
+                </div>
+                
+            </article>
+
+            
+            <article class="course">
+                <div class="course_image">
+                    <img src="{% static 'education/images/course4.jpg' %}" alt="">
+                </div>
+                <div class="course_info">
+                    <h4>Responsive Social Midia Website UI Design</h4>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque eaque eius asperiores suscipit laborum ratione, consequatur repudiandae vel aperiam odio nostrum est nesciunt nulla quod. Expedita beatae provident excepturi minima.
+                    </p>
+                    <a href="" class="btn btn-primary">Learn More</a>
+                </div>
+                
+            </article>
+
+            
+            <article class="course">
+                <div class="course_image">
+                    <img src="{% static 'education/images/course5.jpg' %}" alt="">
+                </div>
+                <div class="course_info">
+                    <h4>Responsive Social Midia Website UI Design</h4>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque eaque eius asperiores suscipit laborum ratione, consequatur repudiandae vel aperiam odio nostrum est nesciunt nulla quod. Expedita beatae provident excepturi minima.
+                    </p>
+                    <a href="" class="btn btn-primary">Learn More</a>
+                </div>
+                
+            </article>
+
+            
+            <article class="course">
+                <div class="course_image">
+                    <img src="{% static 'education/images/course6.jpg' %}" alt="">
+                </div>
+                <div class="course_info">
+                    <h4>Responsive Social Midia Website UI Design</h4>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque eaque eius asperiores suscipit laborum ratione, consequatur repudiandae vel aperiam odio nostrum est nesciunt nulla quod. Expedita beatae provident excepturi minima.
+                    </p>
+                    <a href="" class="btn btn-primary">Learn More</a>
+                </div>
+                
+            </article>
+
+
+
+
+
+            
+        </div>
+    </section>
+
+
+<!-- ===============================     FRQUENT QUATION ASK  ================================ -->
+    <section class="faqs">
+        <h2>Frequent asked Questions</h2>
+        <div class="container faqs_container">
+            <article class="faq open">
+                <div class="faq_icon"><i class="uil uil-plus"></i></div>
+                <div class="question_answer">
+                    <h4>How do i know the right courses for me?</h4>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum odio illum qui atque? Culpa veniam, vel laboriosam eum blanditiis, minus alias natus nemo, molestiae dolorum quibusdam modi sit eos autem.
+                    </p>
+                </div>
+
+            </article>
+            <article class="faq">
+                <div class="faq_icon"><i class="uil uil-plus"></i></div>
+                <div class="question_answer">
+                    <h4>How do i know the right courses for me?</h4>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum odio illum qui atque? Culpa veniam, vel laboriosam eum blanditiis, minus alias natus nemo, molestiae dolorum quibusdam modi sit eos autem.
+                    </p>
+                </div>
+
+            </article>
+            <article class="faq">
+                <div class="faq_icon"><i class="uil uil-plus"></i></div>
+                <div class="question_answer">
+                    <h4>How do i know the right courses for me?</h4>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum odio illum qui atque? Culpa veniam, vel laboriosam eum blanditiis, minus alias natus nemo, molestiae dolorum quibusdam modi sit eos autem.
+                    </p>
+                </div>
+
+            </article>
+            <article class="faq">
+                <div class="faq_icon"><i class="uil uil-plus"></i></div>
+                <div class="question_answer">
+                    <h4>How do i know the right courses for me?</h4>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum odio illum qui atque? Culpa veniam, vel laboriosam eum blanditiis, minus alias natus nemo, molestiae dolorum quibusdam modi sit eos autem.
+                    </p>
+                </div>
+
+            </article>
+            <article class="faq">
+                <div class="faq_icon"><i class="uil uil-plus"></i></div>
+                <div class="question_answer">
+                    <h4>How do i know the right courses for me?</h4>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum odio illum qui atque? Culpa veniam, vel laboriosam eum blanditiis, minus alias natus nemo, molestiae dolorum quibusdam modi sit eos autem.
+                    </p>
+                </div>
+
+            </article>
+            <article class="faq">
+                <div class="faq_icon"><i class="uil uil-plus"></i></div>
+                <div class="question_answer">
+                    <h4>How do i know the right courses for me?</h4>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum odio illum qui atque? Culpa veniam, vel laboriosam eum blanditiis, minus alias natus nemo, molestiae dolorum quibusdam modi sit eos autem.
+                    </p>
+                </div>
+
+            </article>
+            <article class="faq">
+                
+                <div class="faq_icon"><i class="uil uil-plus"></i></div>
+                <div class="question_answer">
+                    <h4>How do i know the right courses for me?</h4>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum odio illum qui atque? Culpa veniam, vel laboriosam eum blanditiis, minus alias natus nemo, molestiae dolorum quibusdam modi sit eos autem.
+                    </p>
+                </div>
+
+            </article>
+            <article class="faq">
+                <div class="faq_icon"><i class="uil uil-plus"></i></div>
+                <div class="question_answer">
+                    <h4>How do i know the right courses for me?</h4>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum odio illum qui atque? Culpa veniam, vel laboriosam eum blanditiis, minus alias natus nemo, molestiae dolorum quibusdam modi sit eos autem.
+                    </p>
+                </div>
+
+            </article>
+        </div>
+    </section>
+
+
+
+{% endblock content %}
+{% block js %}
+<script src="{% static 'education/js/base.js' %}"></script>
+{% endblock js %}

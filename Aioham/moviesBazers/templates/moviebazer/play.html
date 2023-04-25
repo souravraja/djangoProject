@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responsive movie website </title>
+    <link rel="stylesheet" href="{% static 'movieBazers/css/movihome/style.css' %}">
+    <link rel="shortcut icon" href="img/fav-icon.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+
+</head>
+<body>
+    <header>
+        <div class="nav container">
+            <!-- logo -->
+            <a href="" class="logo">movie<span>Val</span>
+            </a>
+            <div class="search-box">
+                <input type="text" name="" id="search-input" placeholder="Search movie">
+                <i class="bx bx-search"></i>
+            </div>
+            <a href="#" class="user">
+                <img src="img/ba.jpg" alt="" class="user-img">
+            </a>
+            <div class="navbar">
+                <a href="index.html" class="nav-link nav-active">
+                    <i class="bx bx-home"></i>
+                    <span class="nav-link-title">home</span>
+                </a>
+                <a href="" class="nav-link">
+                    <i class="bx bxs-hot"></i>
+                    <span class="nav-link-title">Trending</span>
+                </a>
+                <a href="" class="nav-link">
+                    <i class="bx bx-compass"></i>
+                    <span class="nav-link-title">Explore</span>
+                </a>
+                <a href="" class="nav-link">
+                    <i class="bx bx-tv"></i>
+                    <span class="nav-link-title">movies</span>
+                </a>
+                <a href="" class="nav-link">
+                    <i class="bx bx-heart"></i>
+                    <span class="nav-link-title">Favourite</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+<!-- <img src="img/ab.jpg" alt="" srcset=""> -->
+
+    <div class="play-container container">
+        <img src="img/ab.jpg" alt="" class="play-img">
+        <div class="play-text">
+            <h2>{{sm.title}}</h2>
+            <!-- retting section  -->
+            <div class="rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star-half"></i>
+            </div>
+            <!-- video type section  -->
+            <div class="tags">
+                <span>Action</span>
+                <span>Adventure</span>
+                <span>4k</span>
+            </div>
+            <!-- trailer button  -->
+            <a href="" class="watch-btn">
+                <i class="bx bx-right-arrow"></i>
+                <span>watch the trailer</span>
+            </a>
+        </div>
+        <!-- play button  -->
+        <i class="bx bx-right-arrow play-movie"></i>
+        <!-- vider container  -->
+
+        <div class="video-container">
+            <!-- video box -->
+            <div class="video-box">
+                <video id="myvideo" src="../../VID-20221002-WA0016.mp4" controls></video>
+                <!-- close video icon  -->
+                <i class="bx bx-x close-video"></i>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="about-movie container">
+        <h2>movie ka nam</h2>
+        <p>{{sm.des}}</p>
+    </div>
+
+    <!-- download -->
+    <div class="download">
+        <h2 class="download-title">Download Movie</h2>
+        <div class="download-links">
+            <a href="" download="">360p</a>
+            <a href="" download="">480p</a>
+            <a href="" download="">720p</a>
+            <a href="" download="">1080p</a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script src="{% static 'movieBazers/js/movihome/style.js' %}"></script>
+</body>
+</html>

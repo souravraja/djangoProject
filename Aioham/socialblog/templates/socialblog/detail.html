@@ -1,0 +1,35 @@
+{% extends "socialblog/home1.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'socialblog/css/newpost.css' %}">
+{% endblock css %}
+{%block sidebar%}
+{%endblock sidebar%}
+
+{% block content %}
+    <img src="{{object.author.profile.image.url}}" >
+    {{object.author}}
+    <hr>
+    <h1><a href="{% url 'PostDetails' object.id %}">{{object.title}}</a></h1>
+
+
+    <br>
+    <div class="photo">                           
+        <img src="{{object.image.url }}" alt="this is img">
+    </div>
+    <h3>{{object.description}}</h3>
+    
+    <br>
+    {{object.dateTime}}
+    {% if object.user == user %}    
+    <div>
+        <a href="{% url 'update' object.id %}">update</a>
+        <a href="{% url 'delate' object.id %}">Delete</a>
+    </div>
+    {% endif %}
+    <hr>
+    <br>
+{% endblock content %}
+{%block Right%}
+{%endblock Right%}

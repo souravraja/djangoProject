@@ -1,0 +1,11 @@
+.addmanu{
+    color: black;
+    font-size: 5rem;
+    background:yellowgreen;
+    border-radius: 60%;
+    text-decoration: none;
+    position: fixed;
+    bottom:6rem;
+    right: 8rem;
+    border: 3px solid #73AD21;
+}

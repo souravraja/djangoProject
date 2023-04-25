@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'ownshop/restudent/css/home.css' %}">
+    {% block css %}{% endblock css %}
+
+    <title>Home page</title>
+</head>
+<body>
+    {% for i in k %}
+    <div class="banner">
+        {% block content1 %}
+        <video autoplay loop muted plays-inline>
+            <source src="{% static 'restudent/video2.mp4' %}" type="video/mp4">
+        </video>
+        {% endblock content1 %}
+        
+        <div class="navbar">
+           
+            <img src="{% static 'restudent/logo1.png' %}" alt="" class="logo">
+
+            <!-- list -->
+            <ul>
+                <li><a href="{% url 'ownshopin' i.id  %}"><i class="fa fa-home">Home</i></a></li>
+                <li><a href="{% url 'manu' i.id data %}"><i class="fa fa-home">Manu1</i></a></li>
+                <li><a href=""><i class="fa fa-home">gallery</i></a></li>
+                <li><a href=""><i class="fa fa-home">Service</i></a></li>
+                <li><a href=""><i class="fa fa-home">contect</i></a></li>
+            </ul>
+        </div>
+        
+        {% block content2 %}
+        
+        <div class="content">
+            <h1> <span> {{i.shop_name}} </span> </h1>
+            <h1>Making <span> Healthy </span> Food</h1>
+            <p>Created By <span>{{i.shop_name}}</span> </p>
+            <div>
+                <button type="button" class="butn">order now</button>
+                <button type="button" class="butn">book a table</button>
+                
+                <button type="button" class="butn">{{i.shop_name}}</button>
+                <button type="button" class="butn">{{i.id}}</button>
+                
+            </div>
+        </div>
+        
+        {% endblock content2 %}
+    </div>
+    <a href="" class="addmanu">+</a>
+{% endfor %}
+
+</body>
+</html>

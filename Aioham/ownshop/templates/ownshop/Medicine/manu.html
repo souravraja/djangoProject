@@ -1,0 +1,18 @@
+{% extends 'ownshop/Medicine/home.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'ownshop/Medicine/css/manu.css' %}">
+{% endblock style %}
+{% block content %}
+{% for i in k %}
+    <h2>{{i.product}}</h2>
+{% endfor %}
+
+<h2>{{data}}</h2>
+<h2>{{pk}}</h2>
+{% for i in p %}
+    <h2>{{i.shop_name}}</h2>
+{% endfor %}
+<h2>{{p}}</h2>
+<a href="{%url 'addmanuitems' %}" class="addmanu">+</a>
+{% endblock content %}

@@ -1,0 +1,62 @@
+{% extends 'Book/home.html' %}
+{% load static %}
+{% block css%}
+<link rel="stylesheet" href="{% static 'book/css/book.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+{%endblock css%}
+
+
+{% block content12%}
+<!-- searchbar -->
+<div class="main">
+<div class="main1">
+
+    <input type="search" placeholder="type to search">
+    <a href=""><i class="fa fa-search"></i></a>
+ 
+</div>
+</div>
+<!-- searchbar -->
+<!-- books -->
+
+<div class="arrivals">
+    <h1>All Books</h1>
+    
+    <div class="arrivals_box">
+        {% for i in books %}
+        <div class="arrivals_card">
+            <div class="arrivals_image">
+                <a href="{%url 'bookin2' i.id%}">
+                <img src="{{i.Book_Image.url}}" alt="">
+            </a>
+            </div>
+            <div class="arrivals_tag">
+                <p>{{i.Book_name}}</p>
+                <div class="arrivals_icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <a href="#" class="arrivals_btn">add to Favourite</a>
+              
+                <a href="{%url 'bookin2' i.id %}" class="arrivals_btn">read</a>
+                <i></i>
+            </div>
+        </div>
+        {% endfor %}
+        
+
+
+        
+
+    </div>
+    
+  
+
+</div>
+<!-- books -->
+
+{%endblock content12%}

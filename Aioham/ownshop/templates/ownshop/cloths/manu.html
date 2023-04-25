@@ -1,0 +1,9 @@
+{% extends 'ownshop/cloths/home.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'ownshop/cloths/css/manu.css' %}">
+{% endblock style %}
+{% block content %}
+<h2>Clothe</h2>
+<a href="{%url 'addmanuitems' %}" class="addmanu">+</a>
+{% endblock content %}

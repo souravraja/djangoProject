@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'poppins',sans-serif;
+    box-sizing: border-box;
+}
+.hero{
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.7),#3551b5), url(abc.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form{
+    width: 40%;
+    max-width: 600px;
+    margin-top: -13rem;
+
+}
+.input-group{
+    margin-bottom: 30px;
+    position: relative;
+}
+.procuctclass{
+    width: 100%;
+    padding: 10px;
+    outline: 0;
+    border: 1px solid #fff;
+    color: #fff;
+    background: transparent;
+    font-size: 15px;
+    background-color: #94c65d;
+}
+.procuctclass::placeholder{
+    color: #5b0e9e;
+    font-size: 1.2rem;
+    font-family:'Times New Roman', Times, serif;
+
+}
+.labelfield{
+    color: #fff;
+    cursor: text;
+    font-size: 2rem;
+    margin-bottom: 222px;
+    
+}
+.labelfield{
+    margin-bottom: 55px;
+}
+button{
+    padding: 10px 0;
+    color: #fff;
+    outline: none;
+    background: transparent;
+    border: 1px solid #fff;
+    width: 100%;
+    cursor: pointer;
+}
+
+h1{
+    text-align: center;
+    text-decoration: underline;
+    font-size: 3.8rem;
+    background-color: #5b0e9e;
+    color: aliceblue;
+    text-decoration-color:aqua ;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#procuctdetailsid::placeholder{
+    vertical-align: middle;
+}
