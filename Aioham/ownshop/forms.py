@@ -44,7 +44,7 @@ class AddShop(ModelForm):
         widgets={
             'shop_name':forms.TextInput(attrs={
             'class':"procuctclass",
-            'placeholder':'items name',
+            'placeholder':'shop name',
 
             }),
             'shop_ownername':forms.TextInput(attrs={
@@ -54,13 +54,13 @@ class AddShop(ModelForm):
             }),
             'ph_no':forms.NumberInput(attrs={
             'class':"procuctclass",
-            'placeholder':'items price',
+            'placeholder':'shop number',
 
             }),
             'address':forms.Textarea(attrs={
             'class':"procuctclass ptrs",
             'id':"procuctdetailsid",
-            'placeholder':'items details',
+            'placeholder':'shop address',
 
             }),
         }

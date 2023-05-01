@@ -23,7 +23,7 @@ class Product(models.Model):
     product=models.CharField(max_length=100)
     price=models.IntegerField()
     product_details=models.TextField(default=None,null=True,blank=True)
-    product_image=models.ImageField(upload_to='productimage',null=True,blank=True)
+    product_image=models.ImageField(upload_to='productimage/',null=True,blank=True)
     def __str__(self):
         return self.product
 

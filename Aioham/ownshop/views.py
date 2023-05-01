@@ -116,7 +116,7 @@ class ownshop(View):
                 'data':data,
                 'pk':pk
             }
-            print(k)
+            
             return render(request,"ownshop/Stationary/home.html",k)
         
         # if data == 'Resturent':
@@ -130,6 +130,7 @@ class ownshop(View):
 
 class manu(View):
     def get(self,request,pk,data=None):
+        print(data)
         if data == "Resturant":
             food=[p for p in Product.objects.all() if p.shopname.id == pk]
             print('raja')
@@ -142,7 +143,7 @@ class manu(View):
             }
             return render(request,"ownshop/restudent/manu1.html",k)
         
-        if data == "strret":
+        elif data == "strret":
             food=[p for p in Product.objects.all() if p.shopname.id == pk]
             print('raja')
             k={
@@ -152,7 +153,7 @@ class manu(View):
             }
             return render(request,"ownshop/Street food/manu.html",k)
         
-        if data == "medicine":
+        elif data == "medicine":
             k=[Ownshop.objects.get(id=pk)]
             food=[p for p in Product.objects.all() if p.shopname.id == pk]
             print('raja')
@@ -163,7 +164,7 @@ class manu(View):
                 'p':k
             }
             return render(request,"ownshop/Medicine/manu.html",k)
-        if data == "chiken":
+        elif data == "chiken":
             food=[p for p in Product.objects.all() if p.shopname.id == pk]
             print('raja')
             k={
@@ -172,7 +173,7 @@ class manu(View):
                 'pk':pk
             }
             return render(request,"ownshop/Chiken/manu.html",k)
-        if data == "cloths":
+        elif data == "cloths":
             food=[p for p in Product.objects.all() if p.shopname.id == pk]
             print('raja')
             k={
@@ -181,7 +182,7 @@ class manu(View):
                 'pk':pk
             }
             return render(request,"ownshop/cloths/manu.html",k)
-        if data == "fruit":
+        elif data == "fruit":
             food=[p for p in Product.objects.all() if p.shopname.id == pk]
             print('raja')
             k={
@@ -190,7 +191,7 @@ class manu(View):
                 'pk':pk
             }
             return render(request,"ownshop/Fruits/manu.html",k)
-        if data == "Groceory":
+        elif data == "Groceroy":
             food=[p for p in Product.objects.all() if p.shopname.id == pk]
             print('raja')
             k={
@@ -199,7 +200,15 @@ class manu(View):
                 'pk':pk
             }
             return render(request,"ownshop/Grocery/manu.html",k)
-        if data == "Stationary":
+        elif data == "Stationary":
+            food=[p for p in Product.objects.all() if p.shopname.id == pk]
+            k={
+                "k":food,
+                'data':data,
+                'pk':pk
+            }
+            return render(request,"ownshop/Stationary/manu.html",k)
+        elif data == None:
             food=[p for p in Product.objects.all() if p.shopname.id == pk]
             k={
                 "k":food,
@@ -214,25 +223,24 @@ class manu(View):
 class addmanyitems(View):
     pk=None
     def get(self,request,pk):
-        k=[Ownshop.objects.get(id=pk)]
-        print(k)
         self.pk=pk
         form=AddProduct
         return render(request,'ownshop/additems.html',{'form':form})
+    
     def post(self,request,pk):
-        k1=[p for p in ShopCategory.objects.all() if p.id == pk]
         k=[p for p in Ownshop.objects.all() if p.id == pk]
-        print(k1[0])
-        form=AddProduct(request.POST,request.FILES)
+        k1=[p.type1.name for p in Ownshop.objects.all() if p.id == pk]
+        data=k1[0]
+        form=AddProduct(request.POST,request.FILES,)
         if form.is_valid():
             
             product=form.cleaned_data['product']
             price=form.cleaned_data['price']
-            prodict_details=form.cleaned_data['product_details']
+            prodict_details=form.cleaned_data.get('product_details')
             product_img=form.cleaned_data['product_image']
             reg=Product(shopname=k[0],product=product,price=price,product_details=prodict_details,product_image=product_img,)
             reg.save()
-        return redirect("manu",pk=pk,data=k1[0])
+        return redirect("manu",pk=pk,data=data)
 
 class addshop(View):
     pk=None

@@ -8,7 +8,9 @@
 <section class="items">
     {% for i in k %}
     <div class="item">
-        <img src="{{i.product_image.url}}" alt="">
+        {% if i.product_image %}
+            <img src="{{i.product_image.url}}" alt="">
+        {% endif %}
         <h1>{{i.product}}</h1>
         <h1>{{i.price}}</h1>
         <button> order</button>

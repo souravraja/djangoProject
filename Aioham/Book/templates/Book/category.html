@@ -28,7 +28,9 @@
             <div class="arrivals_card">
                 <div class="arrivals_image">
                     <a href="{%url 'bookin' i.id %}">
+                        {% if i.Category_Image %}
                     <img src="{{i.Category_Image.url}}" alt="">
+                    {% endif %}
                 
                 </div>
                 <div class="arrivals_tag">

@@ -48,7 +48,8 @@ def reviews(request):
 
 class book1(View):
     def get(self,request,pk):
+     print(pk)
      p=CreateBook.objects.get(id=pk)
-     
+     print(p. Book_name)
      print(p.document)
-     return render(request,'Book/book1.html',{"pk":p.document})
+     return render(request,'Book/book1.html',{"p":p.document})
