@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     'conversation',
     'socialblog',
     'education',
+    "travel",
+    "Doctor_Appointment",
 ]
 
 MIDDLEWARE = [

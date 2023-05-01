@@ -31,6 +31,8 @@ urlpatterns = [
     path('conversation/',include('conversation.urls')),
     path('socialblog/',include('socialblog.urls')),
     path('education/',include('education.urls')),
+    path('travel/',include('travel.urls')),
+    path('Doctor_Appointment/',include('Doctor_Appointment.urls'))
 ]
 urlpatterns += static(settings.MEDIA_URL , document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL , document_root=settings.STATIC_ROOT)
